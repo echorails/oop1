@@ -18,7 +18,7 @@ if (d > 0) {
     double x1 = (-b + Math.sqrt(d)) / (2*a);
     double x2 = (-b - Math.sqrt(d)) / (2*a);
     System.out.println("x1 = " + x1 + ", x2 = " + x2);
-} else if (d == 0) {
+} else if (d < 0) {
     System.out.println("error the d is negative");
 }
     }
