@@ -1,0 +1,40 @@
+package Task5;
+
+import java.util.Objects;
+
+public abstract class Animal {
+    private String name;
+    private int age;
+
+    public Animal(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public abstract String getSound();
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + "{name='" + name + "', age=" + age + ", sound='" + getSound() + "'}";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Animal animal)) return false;
+        return age == animal.age && Objects.equals(name, animal.name) && getClass().equals(animal.getClass());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, age, getClass());
+    }
+}
